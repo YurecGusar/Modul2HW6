@@ -10,6 +10,7 @@ namespace Appliances
     {
         public void Run()
         {
+            Console.WriteLine("develop");
         }
     }
 }
