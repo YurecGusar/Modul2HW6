@@ -45,7 +45,7 @@ namespace Appliances
             var applianceByColor = allAppliance.GetAllWithColor(Color.White);
             foreach (var item in applianceByColor)
             {
-                Console.WriteLine($"{GetNameOfAppliance(item.GetType().ToString())} {item.Model} {item.Price} {item.Currency}");
+                Console.WriteLine($"{GetNameOfAppliance(item.GetType())} {item.Model} {item.Price} {item.Currency}");
             }
 
             var applianceInSocket = _socketService.GetAll();
@@ -54,9 +54,9 @@ namespace Appliances
             Console.WriteLine($"{nameof(applianceInSocket)} {nameof(totalPower)}: {totalPower}");
         }
 
-        private string GetNameOfAppliance(string str)
+        private string GetNameOfAppliance(object str)
         {
-            var newStr = str.Split('.');
+            var newStr = str.ToString().Split('.');
             return newStr[newStr.Length - 1];
         }
     }
