@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Appliances.Services;
+using Appliances.Services.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Appliances
 {
@@ -6,7 +8,11 @@ namespace Appliances
     {
         public static void Main(string[] args)
         {
-            var starter = new Starter();
+            var serviceProvider = new ServiceCollection()
+                .AddTransient<ISocketService, SocketService>()
+                .AddTransient<Starter>()
+                .BuildServiceProvider();
+            var starter = serviceProvider.GetService<Starter>();
             starter.Run();
         }
     }

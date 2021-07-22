@@ -1,0 +1,30 @@
+﻿namespace Modul2HW6.Enums
+{
+    public enum Company
+    {
+        Samsung,
+        Xiaomi,
+        Moulinex,
+        LG,
+        Nokia,
+        Siemens,
+        Apple,
+        Electrolux,
+        HewlettPackard,
+        Braun,
+        Philips,
+        Panasonic,
+        Tefal,
+        Nomi,
+        Vivo,
+        Google,
+        Asus,
+        Fujitsu,
+        Hp,
+        Lenovo,
+        Sony,
+        Fender,
+        Gibson,
+        JBL
+    }
+}
