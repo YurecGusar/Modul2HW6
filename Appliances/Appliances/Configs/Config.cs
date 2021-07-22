@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Appliances.Configs
 {
     public class Config
     {
+        [JsonPropertyName("socketQuantity")]
         public int SocketQuantity { get; set; }
+        [JsonPropertyName("settingConfig")]
         public SettingConfig SettingConfig { get; set; }
     }
 }

@@ -9,11 +9,12 @@ namespace Appliances.Services
 {
     public class ConfigService : IConfigService
     {
-        private const string _jsonFileName = "config.json";
+        private const string _jsonFileName = @"E:\A-Level\YurecGusar\Modul2HW6\Appliances\Appliances\config.json";
 
         public ConfigService()
         {
-            var config = GetConfig();
+            Serialisation(GetConfig());
+            var config = DeSerialisation();
             SocketQuantity = config.SocketQuantity;
             SettingConfig = config.SettingConfig;
         }
