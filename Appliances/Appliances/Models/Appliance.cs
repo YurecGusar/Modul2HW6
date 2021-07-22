@@ -9,5 +9,6 @@ namespace Appliances.Models
         public double Price { get; set; }
         public Color Color { get; set; }
         public double Power { get; set; }
+        public Currency Currency { get; set; }
     }
 }

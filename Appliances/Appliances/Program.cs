@@ -17,6 +17,8 @@ namespace Appliances
                 .AddSingleton<ISocketService, SocketService>()
                 .AddTransient<ApplianceProvider>()
                 .AddTransient<IComparer, ApplianceComparer>()
+                .AddTransient<IConfigService, ConfigService>()
+                .AddTransient<IApplianceService, ApplianceService>()
                 .BuildServiceProvider();
             var starter = serviceProvider.GetService<Starter>();
             starter.Run();

@@ -9,5 +9,6 @@ namespace Appliances.Configs
     public class Config
     {
         public int SocketQuantity { get; set; }
+        public SettingConfig SettingConfig { get; set; }
     }
 }

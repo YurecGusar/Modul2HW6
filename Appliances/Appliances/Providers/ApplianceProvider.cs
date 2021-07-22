@@ -4,14 +4,18 @@ using Appliances.Models.Appliances.ComputingDevices.Stations;
 using Appliances.Models.Appliances.ComputingDevices.Stations.MultiMedias;
 using Appliances.Models.Appliances.KitchenDevices.HeatDevices;
 using Appliances.Models.Appliances.KitchenDevices.ShreddingDevices;
+using Appliances.Services.Abstractions;
 
 namespace Appliances.Providers
 {
     public class ApplianceProvider
     {
+        private readonly IConfigService _configService;
         private Appliance[] _data;
-        public ApplianceProvider()
+        public ApplianceProvider(
+            IConfigService configService)
         {
+            _configService = configService;
             _data = new Appliance[]
             {
                 new Stove()
@@ -123,8 +127,17 @@ namespace Appliances.Providers
                 },
             };
             GetAppliances = _data;
+            GetCurrency(GetAppliances);
         }
 
         public Appliance[] GetAppliances { get; set; }
+
+        private void GetCurrency(Appliance[] appliances)
+        {
+            foreach (var item in appliances)
+            {
+                item.Currency = _configService.SettingConfig.CurrentCurrency;
+            }
+        }
     }
 }

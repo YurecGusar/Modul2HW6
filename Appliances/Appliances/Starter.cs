@@ -10,24 +10,24 @@ namespace Appliances
 {
     public class Starter
     {
-        private readonly ApplianceProvider _applianceProvider;
+        private readonly IApplianceService _appliance;
         private readonly ISocketService _socketService;
         private readonly IComparer _comparer;
 
         public Starter(
             ISocketService socketService,
-            ApplianceProvider appliance,
+            IApplianceService appliance,
             IComparer comparer)
         {
             _socketService = socketService;
-            _applianceProvider = appliance;
+            _appliance = appliance;
             _comparer = comparer;
         }
 
         public void Run()
         {
             var model = "F";
-            var app = _applianceProvider.GetAppliances;
+            var app = _appliance.GetAllAppliance;
 
             _socketService.Add(app[0]);
             _socketService.Add(app[1]);
@@ -44,7 +44,7 @@ namespace Appliances
                 var b = app.GetAllWithColor(Color.White);
                 foreach (var item in b)
                 {
-                    Console.WriteLine(item.Model);
+                    Console.WriteLine($"{item.Model} {item.Price} {item.Currency}");
                 }
             }
             catch (FiendException ex)
