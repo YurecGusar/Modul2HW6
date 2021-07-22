@@ -8,5 +8,9 @@ namespace Appliances.Enums
 {
     public enum PortablePowerSupply
     {
+        ForkClip,
+        WLED,
+        THREEHOLESPECIAL,
+        PININSIDE
     }
 }

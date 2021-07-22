@@ -8,5 +8,10 @@ namespace Appliances.Enums
 {
     public enum MatrixType
     {
+        TN,
+        IPS,
+        TFT,
+        AMOLED,
+        POLED
     }
 }

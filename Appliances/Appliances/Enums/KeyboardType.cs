@@ -8,5 +8,7 @@ namespace Appliances.Enums
 {
     public enum KeyboardType
     {
+        QWERTY,
+        NUMBERS
     }
 }

@@ -1,4 +1,7 @@
-﻿using Appliances.Providers;
+﻿using System.Collections;
+using Appliances.Extension;
+using Appliances.Helpers;
+using Appliances.Providers;
 using Appliances.Services;
 using Appliances.Services.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +16,7 @@ namespace Appliances
                 .AddTransient<Starter>()
                 .AddSingleton<ISocketService, SocketService>()
                 .AddTransient<ApplianceProvider>()
+                .AddTransient<IComparer, ApplianceComparer>()
                 .BuildServiceProvider();
             var starter = serviceProvider.GetService<Starter>();
             starter.Run();
