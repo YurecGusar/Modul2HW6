@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Appliances.Enums;
 
-namespace Modul2HW6.Models.Appliances.KitchenDevices.ShreddingDevices
+namespace Appliances.Models.Appliances.KitchenDevices.ShreddingDevices
 {
     public class Blender : ShreddingDevice
     {
+        public BlenderType Type { get; set; }
     }
 }

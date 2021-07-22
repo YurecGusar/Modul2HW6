@@ -1,15 +1,15 @@
-﻿namespace Modul2HW6.Enums
+﻿namespace Appliances.Enums
 {
     public enum Color
     {
-        Black = 1,
-        White = 2,
-        Brown = 4,
-        Grey = 8,
-        Green = 16,
-        Yellow = 32,
-        Blue = 64,
-        Red = 128,
-        Violet = 256
+        Black,
+        White,
+        Brown,
+        Grey,
+        Green,
+        Yellow,
+        Blue,
+        Red,
+        Violet
     }
 }

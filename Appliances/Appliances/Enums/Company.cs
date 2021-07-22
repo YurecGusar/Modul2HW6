@@ -1,4 +1,4 @@
-﻿namespace Modul2HW6.Enums
+﻿namespace Appliances.Enums
 {
     public enum Company
     {

@@ -1,6 +1,8 @@
-﻿namespace Modul2HW6.Models.Appliances.KitchenDevices.ShreddingDevices
+﻿namespace Appliances.Enums
 {
-    internal class BlenderType
+    public enum BlenderType
     {
+        HandHeld,
+        Stationary
     }
 }
