@@ -18,3 +18,4 @@ E:\A-Level\YurecGusar\Modul2HW6\Appliances\Appliances\obj\Debug\net5.0\Appliance
 E:\A-Level\YurecGusar\Modul2HW6\Appliances\Appliances\obj\Debug\net5.0\ref\Appliances.dll
 E:\A-Level\YurecGusar\Modul2HW6\Appliances\Appliances\obj\Debug\net5.0\Appliances.pdb
 E:\A-Level\YurecGusar\Modul2HW6\Appliances\Appliances\obj\Debug\net5.0\Appliances.genruntimeconfig.cache
+E:\A-Level\YurecGusar\Modul2HW6\Appliances\Appliances\bin\Debug\net5.0\config.json

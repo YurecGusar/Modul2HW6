@@ -4,7 +4,7 @@ using Appliances.Enums;
 
 namespace Appliances.Extension
 {
-    public static class FiendByModel
+    public static class FiendBy
     {
         public static Appliance GetByModel(this Appliance[] appliance, string model)
         {
