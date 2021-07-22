@@ -7,7 +7,6 @@ namespace Appliances.Services.Abstractions
         public void Add(Appliance appliance);
         public void Disable(int index);
         public void Disable();
-        public double GetTotalPower();
         public Appliance[] GetAll();
     }
 }

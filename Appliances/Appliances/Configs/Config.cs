@@ -9,9 +9,7 @@ namespace Appliances.Configs
 {
     public class Config
     {
-        [JsonPropertyName("socketQuantity")]
         public int SocketQuantity { get; set; }
-        [JsonPropertyName("settingConfig")]
         public SettingConfig SettingConfig { get; set; }
     }
 }

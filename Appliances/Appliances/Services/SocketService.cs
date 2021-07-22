@@ -41,19 +41,5 @@ namespace Appliances.Services
         {
             return _appliances;
         }
-
-        public double GetTotalPower()
-        {
-            var totalPower = 0.0;
-            foreach (var item in _appliances)
-            {
-                if (item != null)
-                {
-                    totalPower += item.Power;
-                }
-            }
-
-            return totalPower;
-        }
     }
 }

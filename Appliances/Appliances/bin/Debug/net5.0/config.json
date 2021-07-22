@@ -1,15 +1,16 @@
-{ "SocketQuantity": 5,
-  "SettingConfig": {
-    "CurrencyData": [
+{
+  "socketQuantity": 5,
+  "settingConfig": {
+    "currencyData": [
       {
-        "Currency": 0,
-        "RateDefaultToCurrency": 0.0367
+        "currency": 0,
+        "rateDefaultToCurrency": 0.0367
       },
       {
-        "Currency": 1,
-        "RateDefaultToCurrency": 1.0
+        "currency": 1,
+        "rateDefaultToCurrency": 1.0
       }
     ],
-    "CurrentCurrency": 0
+    "currentCurrency": 0
   }
 }

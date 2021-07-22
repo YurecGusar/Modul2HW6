@@ -5,6 +5,7 @@ using Appliances.Services.Abstractions;
 using Appliances.Extension;
 using Appliances.Exceptions;
 using Appliances.Enums;
+using Appliances.Models;
 
 namespace Appliances
 {
@@ -13,44 +14,50 @@ namespace Appliances
         private readonly IApplianceService _appliance;
         private readonly ISocketService _socketService;
         private readonly IComparer _comparer;
+        private readonly IConfigService _config;
 
         public Starter(
             ISocketService socketService,
             IApplianceService appliance,
-            IComparer comparer)
+            IComparer comparer,
+            IConfigService config)
         {
             _socketService = socketService;
             _appliance = appliance;
             _comparer = comparer;
+            _config = config;
         }
 
         public void Run()
         {
             var model = "F";
-            var app = _appliance.GetAllAppliance;
+            var allAppliance = _appliance.GetAllAppliance;
 
-            _socketService.Add(app[0]);
-            _socketService.Add(app[1]);
-            _socketService.Add(app[2]);
-
-            /*_socketService.Disable(0);*/
-            /*app = _socketService.GetAll();*/
-
-            Array.Sort(app, _comparer);
-            try
+            for (var i = 0; i < _config.SocketQuantity; i++)
             {
-                var a = app.GetByModel(model);
-                Console.WriteLine(a.Price);
-                var b = app.GetAllWithColor(Color.White);
-                foreach (var item in b)
-                {
-                    Console.WriteLine($"{item.Model} {item.Price} {item.Currency}");
-                }
+            _socketService.Add(allAppliance[i]);
             }
-            catch (FiendException ex)
+
+            Array.Sort(allAppliance, _comparer);
+            var applianceByModel = allAppliance.GetByModel(model);
+            Console.WriteLine($"{applianceByModel.Model} {applianceByModel.Price} {applianceByModel.Currency}");
+            Console.WriteLine();
+            var applianceByColor = allAppliance.GetAllWithColor(Color.White);
+            foreach (var item in applianceByColor)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"{GetNameOfAppliance(item.GetType().ToString())} {item.Model} {item.Price} {item.Currency}");
             }
+
+            var applianceInSocket = _socketService.GetAll();
+            var totalPower = applianceInSocket.GetTotalPower();
+            Console.WriteLine();
+            Console.WriteLine($"{nameof(applianceInSocket)} {nameof(totalPower)}: {totalPower}");
+        }
+
+        private string GetNameOfAppliance(string str)
+        {
+            var newStr = str.Split('.');
+            return newStr[newStr.Length - 1];
         }
     }
 }

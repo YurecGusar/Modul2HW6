@@ -13,7 +13,7 @@ namespace Appliances.Services
 
         public ConfigService()
         {
-            Serialisation(GetConfig());
+            /*Serialisation(GetConfig());*/
             var config = DeSerialisation();
             SocketQuantity = config.SocketQuantity;
             SettingConfig = config.SettingConfig;
